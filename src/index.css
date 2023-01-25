@@ -1,13 +1,476 @@
+/* =============================== Element level style =================================== */
+
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  position: relative;
+  /* prevents horizontal scroll bar */
+  overflow-x: hidden;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+p {
+  margin: 0;
+}
+
+/* =============================== Header component style =================================== */
+
+.header {
+  display: flex;
+  align-items: center;
+  padding: 10px 30px;
+  height: 36vh;
+  position: relative;
+  top: 0;
+  z-index: 1;
+  justify-content: space-between;
+}
+
+.img-logo {
+  width: 185px;
+  padding-left: 37px;
+  padding-bottom: 48px;
+  cursor: pointer;
+}
+
+/* =============================== Navbar component style =================================== */
+
+.nav {
+  margin-right: 7.5vw;
+}
+
+.nav-item {
+  padding-left: 45px;
+  padding-top: 35px;
+  color: rgb(88, 88, 88);
+  text-decoration-line: none;
+  font-weight: 400;
+}
+
+.nav-item:hover {
+  /* color: #467302; */
+  color: #557525;
+  text-decoration-line: underline;
+  text-decoration-color: #557525;
+}
+
+/* =============================== Landing page style =================================== */
+
+.landing {
+  position: relative;
+  display: flex;
+  flex-flow: column;
+  position: relative;
+}
+
+/* image size is cut from both the sides when brower width decreases */
+/* Put img under a div in LandingPage.js */
+.landing-img {
+  width: 100%;
+  height: 330px;
+  overflow: hidden;
+  position: relative;
+}
+
+.landing-img img {
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.landing-msg {
+  position: absolute;
+  top: 4%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  max-inline-size: 40vw;
+  /* controls the spacing between the wrapped text */
+  line-height: 1.4;
+  display: inline-block;
+  text-align: center;
+}
+
+.landing-fnt {
+  font-family: Raleway;
+  font-weight: 800;
+  font-size: 2.5rem;
+  color: #000000;
+}
+
+.landing-search {
+  position: absolute;
+  top: 7.4%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 3;
+  max-inline-size: 39vw;
+  height: 10vh;
+  border-style: outset;
+  box-shadow: 0px 5px 10px 2px #bebbbb;
+}
+
+/* adjust font size of the placeholder text */
+input:placeholder-shown {
+  font-size: 1.2rem;
+  font-weight: 200;
+}
+
+.landing-btn {
+  position: absolute;
+  top: 7.4%;
+  left: 67%;
+  transform: translate(-50%, -50%);
+  z-index: 4;
+  width: 29px;
+  height: 29px;
+  border-radius: none;
+  background: #467302;
+  border: none;
+}
+
+.white-color {
+  color: white;
+}
+
+.top-btn {
+  position: sticky;
+  top: 90%;
+  left: 93vw;
+  width: 29px;
+  height: 29px;
+  border-radius: none;
+  border: none;
+  z-index: 9;
+  padding: 0 !important;
+}
+
+/* =============================== Categories component style =================================== */
+
+.category-heading {
+  font-family: Raleway;
+  color: #555555;
+  font-size: 2.2rem;
+  font-weight: 700;
+  text-align: center;
+  text-decoration-line: underline;
+  text-decoration-color: black;
+  margin-top: 6vh;
+  padding-bottom: 6vh;
+}
+
+.category-link {
+  float: right;
+  margin-right: 11vw !important;
+  color: #467302;
+  font-weight: 500;
+}
+
+.category {
+  position: relative;
+  display: flex;
+  flex-flow: row wrap;
+  gap: 11px;
+  margin: 5vw 9vw;
+}
+
+.category-card {
+  text-align: center;
+  font-size: 19px;
+  color: black;
+  width: 9rem;
+  height: 8.5rem !important;
+  border-radius: 10% !important;
+  border-style: outset;
+  box-shadow: 0px 5px 10px 2px #bebbbb;
+}
+
+.category-card:hover {
+  text-align: center;
+  font-size: 18px;
+  width: 8.7rem;
+  height: 8.3rem !important;
+  border-radius: 10% !important;
+  border-style: outset;
+  box-shadow: 0px 5px 10px 2px #bebbbb;
+}
+
+.category-card-img {
+  width: 50% !important;
+  height: 50% !important;
+  padding-top: 10px;
+}
+
+/* =============================== Featured Racipies component style =================================== */
+
+.fr-heading {
+  font-family: Raleway;
+  color: #555555;
+  font-size: 2.2rem;
+  font-weight: 700;
+  text-align: center;
+  padding-top: 4px;
+  margin-top: 2rem;
+
+}
+
+.fr {
+  position: relative;
+  display: flex;
+  flex-flow: row wrap;
+  gap: 18px;
+  margin: 5vw 9vw;
+}
+
+.fr-card {
+  text-align: center;
+  width: 21rem;
+  height: 35rem !important;
+  border-radius: 0% !important;
+  border-style: outset;
+  box-shadow: 0px 5px 10px 2px #bebbbb;
+}
+
+.fr-card:hover {
+  text-align: center;
+  width: 20.5rem;
+  height: 34.5rem !important;
+  border-radius: 0% !important;
+  border-style: outset;
+  box-shadow: 0px 5px 10px 2px #bebbbb;
+}
+
+.fr-card-img {
+  width: 100% !important;
+  height: 55% !important;
+}
+
+.fr-card-title {
+  font-size: 25px !important;
+  font-weight: 650 !important;
+}
+
+.fr-card-txt {
+  padding-top: 10px;
+  font-size: 15px;
+  color: rgb(116, 114, 114);
+}
+
+/* change child element while hover on parent */
+.fr-card:hover .fr-card-txt {
+  padding-top: 10px;
+  font-size: 12px;
+  color: red;
+}
+
+/* =============================== Star Ratings component style =================================== */
+
+.str-button {
+  margin: 0;
+  padding: 0;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding-top: 16px;
+}
+
+.str-size {
+  font-size: small;
+}
+
+/* .str-on {
+  color: #000;
+}
+
+.str-off {
+  color: #ccc;
+} */
+
+/* =============================== About Us component style =================================== */
+
+.about-us {
+  position: relative;
+  display: flex;
+  flex-flow: row;
+  width: 100vw;
+  height: 86vh;
+  color: #ffffff;
+  background-color: #467302;
+  align-items: center;
+}
+
+.about-us-text {
+  padding: 2.7vw 5.1vw;
+}
+
+.about-us-text>h1 {
+  font-size: 2.25rem;
+}
+
+.about-us-text>p {
+  padding-top: 1vw;
+  font-size: 1.1rem !important;
+  line-height: 2rem;
+}
+
+.about-us-text>button {
+  color: #ffffff;
+  font-weight: 500;
+  background-color: transparent;
+  border: solid;
+  border-radius: 5%;
+  outline: none;
+  cursor: pointer;
+  padding: 1.7vh 4.4vh;
+  margin-top: 1.5vh;
+}
+
+.about-us-img {
+  width: 51vw;
+  z-index: 4;
+}
+
+/* =============================== Subscription component style =================================== */
+
+.sub {
+  position: relative;
+  margin-top: 7vh;
+  margin-bottom: 5vh;
+}
+
+.sub>hr {
+  border-top: 1px solid black;
+  opacity: 1;
+}
+
+.sub-input {
+  margin-top: 2rem;
+  margin-bottom: 2.6rem;
+  padding: 0vw 6vw;
+}
+
+.sub-input>p {
+  font-size: 1.2rem;
+  font-weight: 700;
+  border-left: 3px solid #467302;
+  padding-left: 1rem;
+}
+
+.sub-search-box {
+  position: absolute;
+  z-index: 2;
+  max-inline-size: 43vw;
+  height: 9vh;
+  border-color: #000000 !important;
+}
+
+input:placeholder-shown {
+  font-size: 1rem;
+  font-weight: 200;
+}
+
+.sub-btn {
+  position: absolute;
+  left: 35%;
+  z-index: 3;
+  height: 2.5rem;
+  background: #467302;
+  border: none;
+  border-radius: 25px;
+  color: white;
+  font-weight: 500;
+  font-size: 12px;
+  padding: 0vh 4vh;
+  margin-top: 8px;
+}
+
+/* =============================== Footer component style =================================== */
+
+/* Following classes are created (and used in App.js) to keep footer at the bottom of the page */
+/* Reference: https://www.freecodecamp.org/news/how-to-keep-your-footer-where-it-belongs-59c6aa05c59c/ */
+.page-container {
+  position: relative;
+  min-height: 100vh;
+}
+
+.content-wrap {
+  padding-bottom: 2.5rem;
+  /* Footer height */
+}
+
+.footer {
+  padding-top: 10px;
+  bottom: 0;
+  width: 100%;
+  height: 2.6rem;
+  background: #467302;
+  font-size: 14px;
+  color: white;
+  text-align: center;
+}
+
+/* =============================== Media Queries =================================== */
+
+/* media query to adjust About Us component when screen size is reduced to 1060px or below */
+@media screen and (max-width: 1060px) {
+
+  /* About Us component */
+  .about-us-text>h1 {
+    font-size: 2rem;
+  }
+
+  .about-us-text>p {
+    font-size: 1rem !important;
+    line-height: 1.5rem;
+  }
+
+  .about-us-text>button {
+    padding: 1.7vh 4.4vh;
+    margin-top: 1.5vh;
+  }
+
+}
+
+/* media query to adjust Landing Page and Subscription component when screen size is reduced to 865px or below */
+@media screen and (max-width: 865px) {
+
+  /* landing page */
+  .landing-msg {
+    top: 2.5%;
+    min-inline-size: 70vw;
+  }
+
+  .landing-search {
+    top: 5%;
+    min-inline-size: 60vw;
+
+  }
+
+  .landing-btn {
+    top: 5%;
+    left: 74%;
+  }
+
+  /* Subscripion component */
+  .sub-search-box {
+    max-inline-size: 65vw;
+  }
+
+  .sub-btn {
+    left: 52%;
+  }
+}
+
+/* media query to adjust About Us component when screen size is reduced to 670px or below */
+@media screen and (max-width: 670px) {
+
+  /* About Us component */
+  .about-us {
+    flex-flow: row wrap;
+    height: 100%
+  }
+
+  .about-us-img {
+    width: 100%;
+  }
 }
